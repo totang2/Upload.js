@@ -17,7 +17,7 @@
     "eslint-plugin-jsx-a11y": "^1.0.3",
     "eslint-plugin-react": "^5.0.1",
     "express": "^4.13.4",
-    "gulp": "^3.9.0",
+    "gulp": "^3.9.1",
     "gulp-autoprefixer": "^3.1.0",
     "gulp-babel": "^6.1.0",
     "gulp-es6-module-transpiler": "^0.2.2",
@@ -49,5 +49,9 @@
     "gulp": "gulp",
     "lint": "eslint src/js/**/*.js",
     "demo": "open http://localhost:8000/demo/uploadjs.demo.html && node demo/upload.server.js"
+  },
+  "dependencies": {
+    "node-sass": "^4.10.0",
+    "yarn": "^1.22.4"
   }
 }

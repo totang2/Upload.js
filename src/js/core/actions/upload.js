@@ -44,7 +44,8 @@ export default function fileUpload(http, events, opts, queue) {
           events.trigger('upload.added', { file, id });
           queue.offer((done) => _peformUpload(file, id, done));
         } else {
-          events.trigger('upload.rejected', { file, id, rejected: 'type' });
+console.log('reject');
+          events.trigger('upload.failed', { file, id, rejected: 'type' });
         }
       });
     });

@@ -68,12 +68,14 @@ export default function container(ele, items, events, defaultOpt, opts) {
     append(ele, makePicker(_add, events, _state, max));
 
     events.on('upload.added', ({ file, id }) => {
+console.log('item added');
       const i = item({ type: TYPE_IMAGE, fileId: id, file, events });
       append(_items, i);
     });
 
     const hideShowAdd = (change) => {
-      if (_state.count + change < max) {
+console.log('hide show'+change);     
+ if (_state.count + change < max) {
         removeClass(_add, 'hide');
       } else {
         addClass(_add, 'hide');
@@ -82,7 +84,7 @@ export default function container(ele, items, events, defaultOpt, opts) {
 
     events.on('file.picked', hideShowAdd.bind(null, 1));
     events.on('item.removed', hideShowAdd.bind(null, -1));
-
+    events.on('upload.failed', hideShowAdd.bind(null, -1));
     items.splice(0, items.length);
   });
 
